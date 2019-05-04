@@ -1,12 +1,10 @@
 <?php
-//定义常量
-define("DS", DIRECTORY_SEPARATOR); //动态目录分割符
-define("ROOT_PATH", getcwd().DS);  //当前目录
-define("APP_PATH", ROOT_PATH."Home".DS); //Home目录
-
-echo ROOT_PATH."Frame".DS."Frame.class.php";exit;
-//包含框架初始类
-require_once(ROOT_PATH."Frame".DS."Frame.class.php");
-
-//调用框架初始化方法
-Frame\Frame::run();
+//(0)Home应用常量定义
+define("DS",DIRECTORY_SEPARATOR);//斜线(/、\)，根据操作系统决定
+define("ROOT_PATH",getcwd().DS);//网站根目录
+define("APP_PATH",ROOT_PATH."Home".DS);//应用目录、平台目录
+//(1)包含核心框架类文件
+require(ROOT_PATH."Frame".DS."Frame.class.php");
+//(2)框架初始化
+\Frame\Frame::run();
+?>
